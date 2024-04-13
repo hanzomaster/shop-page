@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $CI_PROJECT_NAME
+  namespace: $CI_PROJECT_ROOT_NAMESPACE
+  labels:
+    name: $CI_PROJECT_NAME
+    app: $CI_PROJECT_NAME
+  annotations:
+    kubectl.kubernetes.io/restartedAt: '$CURRENT_TIMESTAMP'
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: $CI_PROJECT_NAME
+  template:
+    metadata:
+      labels:
+        name: $CI_PROJECT_NAME
+        app: $CI_PROJECT_NAME
+      annotations:
+        kubectl.kubernetes.io/restartedAt: '$CURRENT_TIMESTAMP'
+    spec:
+      containers:
+        - image: $IMAGE_REGISTRY_URL/$IMAGE_NAME_BUILD_LATEST
+          name: $CI_PROJECT_NAME
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: $CI_PROJECT_NAME-secret
+      imagePullSecrets:
+        - name: $CI_PROJECT_NAME-registry
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: $CI_PROJECT_NAME
+  namespace: $CI_PROJECT_ROOT_NAMESPACE
+spec:
+  ports:
+    - name: port
+      port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: $CI_PROJECT_NAME
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: $CI_PROJECT_NAME
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: '0'
+    ingress.kubernetes.io/proxy-body-size: '0'
+    external-dns.alpha.kubernetes.io/target: 42.96.13.169
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: 'true'
+  labels: {}
+  namespace: $CI_PROJECT_ROOT_NAMESPACE
+
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: $CI_PROJECT_NAME.hanzomaster.me
+      http:
+        paths:
+          - backend:
+              service:
+                name: $CI_PROJECT_NAME
+                port:
+                  number: 3000
+            path: /
+            pathType: Prefix

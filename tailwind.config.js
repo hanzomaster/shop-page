@@ -4,6 +4,7 @@ module.exports = {
         './src/**/*.{js,jsx,ts,tsx}',
         './node_modules/react-tailwindcss-datepicker/dist/index.esm.js',
     ],
+    // Change theme to light or dark mode in data-theme attribute
     darkMode: ['class', '[data-theme="light"]'],
     theme: {
         extend: {},
