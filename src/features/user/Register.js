@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LandingIntro from './LandingIntro';
-import ErrorText from '../../components/Typography/ErrorText';
 import InputText from '../../components/Input/InputText';
+import ErrorText from '../../components/Typography/ErrorText';
+import LandingIntro from './LandingIntro';
 
 function Register() {
     const INITIAL_REGISTER_OBJ = {
@@ -30,7 +30,7 @@ function Register() {
             // Call API to check user credentials and save token in localstorage
             localStorage.setItem('token', 'DumyTokenHere');
             setLoading(false);
-            window.location.href = '/app/welcome';
+            window.location.href = '/app/dashboard';
         }
     };
 

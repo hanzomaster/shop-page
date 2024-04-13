@@ -2,7 +2,7 @@ import ForgotPassword from '../features/user/ForgotPassword';
 
 function ExternalPage() {
     return (
-        <div className="">
+        <div>
             <ForgotPassword />
         </div>
     );

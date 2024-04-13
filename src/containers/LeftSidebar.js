@@ -1,8 +1,8 @@
-import routes from '../routes/sidebar';
-import { NavLink, Routes, Link, useLocation } from 'react-router-dom';
-import SidebarSubmenu from './SidebarSubmenu';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import { useDispatch } from 'react-redux';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import routes from '../routes/sidebar';
+import SidebarSubmenu from './SidebarSubmenu';
 
 function LeftSidebar() {
     const location = useLocation();

@@ -1,6 +1,6 @@
 import moment from 'moment';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import TitleCard from '../../../components/Cards/TitleCard';
 import { showNotification } from '../../common/headerSlice';
 
@@ -27,7 +27,7 @@ const TEAM_MEMBERS = [
     {
         name: 'Alex',
         avatar: 'https://reqres.in/img/faces/1-image.jpg',
-        email: 'alex@dashwind.com',
+        email: 'alex@hchip.com',
         role: 'Owner',
         joinedOn: moment(new Date())
             .add(-5 * 1, 'days')
@@ -37,7 +37,7 @@ const TEAM_MEMBERS = [
     {
         name: 'Ereena',
         avatar: 'https://reqres.in/img/faces/2-image.jpg',
-        email: 'ereena@dashwind.com',
+        email: 'ereena@hchip.com',
         role: 'Admin',
         joinedOn: moment(new Date())
             .add(-5 * 2, 'days')
@@ -47,7 +47,7 @@ const TEAM_MEMBERS = [
     {
         name: 'John',
         avatar: 'https://reqres.in/img/faces/3-image.jpg',
-        email: 'jhon@dashwind.com',
+        email: 'jhon@hchip.com',
         role: 'Admin',
         joinedOn: moment(new Date())
             .add(-5 * 3, 'days')
@@ -57,7 +57,7 @@ const TEAM_MEMBERS = [
     {
         name: 'Matrix',
         avatar: 'https://reqres.in/img/faces/4-image.jpg',
-        email: 'matrix@dashwind.com',
+        email: 'matrix@hchip.com',
         role: 'Manager',
         joinedOn: moment(new Date())
             .add(-5 * 4, 'days')
@@ -67,7 +67,7 @@ const TEAM_MEMBERS = [
     {
         name: 'Virat',
         avatar: 'https://reqres.in/img/faces/5-image.jpg',
-        email: 'virat@dashwind.com',
+        email: 'virat@hchip.com',
         role: 'Support',
         joinedOn: moment(new Date())
             .add(-5 * 5, 'days')
@@ -77,7 +77,7 @@ const TEAM_MEMBERS = [
     {
         name: 'Miya',
         avatar: 'https://reqres.in/img/faces/6-image.jpg',
-        email: 'miya@dashwind.com',
+        email: 'miya@hchip.com',
         role: 'Support',
         joinedOn: moment(new Date())
             .add(-5 * 7, 'days')
