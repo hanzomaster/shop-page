@@ -1,9 +1,9 @@
-function SuspenseContent(){
-    return(
-        <div className="w-full h-screen text-gray-300 dark:text-gray-200 bg-base-100">
+function SuspenseContent() {
+    return (
+        <div className="h-screen w-full bg-base-100 text-gray-300 dark:text-gray-200">
             Loading...
         </div>
-    )
+    );
 }
 
-export default SuspenseContent
+export default SuspenseContent;

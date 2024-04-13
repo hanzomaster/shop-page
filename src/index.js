@@ -1,21 +1,21 @@
-import React,  { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { Provider } from 'react-redux';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import store from './app/store'
-import { Provider } from 'react-redux'
+import store from './app/store';
 import SuspenseContent from './containers/SuspenseContent';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
+    // <React.StrictMode>
     <Suspense fallback={<SuspenseContent />}>
         <Provider store={store}>
             <App />
         </Provider>
-    </Suspense>
-  // </React.StrictMode>
+    </Suspense>,
+    // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
