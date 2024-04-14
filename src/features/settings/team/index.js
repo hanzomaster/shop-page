@@ -17,7 +17,7 @@ const TopSideButtons = () => {
                 className="btn btn-primary btn-sm px-6 normal-case"
                 onClick={() => addNewTeamMember()}
             >
-                Invite New
+                Add
             </button>
         </div>
     );
@@ -98,48 +98,46 @@ function Team() {
     };
 
     return (
-        <>
-            <TitleCard title="Active Members" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
-                {/* Team Member list in table format loaded constant */}
-                <div className="w-full overflow-x-auto">
-                    <table className="table w-full">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email Id</th>
-                                <th>Joined On</th>
-                                <th>Role</th>
-                                <th>Last Active</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {members.map((l, k) => {
-                                return (
-                                    <tr key={k}>
-                                        <td>
-                                            <div className="flex items-center space-x-3">
-                                                <div className="avatar">
-                                                    <div className="mask mask-circle h-12 w-12">
-                                                        <img src={l.avatar} alt="Avatar" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div className="font-bold">{l.name}</div>
+        <TitleCard title="Employees" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
+            {/* Team Member list in table format loaded constant */}
+            <div className="w-full overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email Id</th>
+                            <th>Joined On</th>
+                            <th>Role</th>
+                            <th>Last Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {members.map((l, k) => {
+                            return (
+                                <tr key={k}>
+                                    <td>
+                                        <div className="flex items-center space-x-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-circle h-12 w-12">
+                                                    <img src={l.avatar} alt="Avatar" />
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td>{l.email}</td>
-                                        <td>{l.joinedOn}</td>
-                                        <td>{getRoleComponent(l.role)}</td>
-                                        <td>{l.lastActive}</td>
-                                    </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
-                </div>
-            </TitleCard>
-        </>
+                                            <div>
+                                                <div className="font-bold">{l.name}</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{l.email}</td>
+                                    <td>{l.joinedOn}</td>
+                                    <td>{getRoleComponent(l.role)}</td>
+                                    <td>{l.lastActive}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </TitleCard>
     );
 }
 

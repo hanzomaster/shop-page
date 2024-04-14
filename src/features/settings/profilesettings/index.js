@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import TitleCard from '../../../components/Cards/TitleCard';
 import InputText from '../../../components/Input/InputText';
 import TextAreaInput from '../../../components/Input/TextAreaInput';
-import ToogleInput from '../../../components/Input/ToogleInput';
 import { showNotification } from '../../common/headerSlice';
 
 function ProfileSettings() {
@@ -59,12 +58,12 @@ function ProfileSettings() {
                     defaultValue="IST"
                     updateFormValue={updateFormValue}
                 />
-                <ToogleInput
+                {/* <ToogleInput
                     updateType="syncData"
                     labelTitle="Sync Data"
                     defaultValue={true}
                     updateFormValue={updateFormValue}
-                />
+                /> */}
             </div>
 
             <div className="mt-16">
