@@ -55,7 +55,7 @@ const INITIAL_INTEGRATION_LIST = [
     },
 ];
 
-function Integration() {
+function Menu() {
     const dispatch = useDispatch();
 
     const [integrationList, setIntegrationList] = useState(INITIAL_INTEGRATION_LIST);
@@ -85,14 +85,14 @@ function Integration() {
                             <img alt="icon" src={i.icon} className="mr-4 inline-block h-12 w-12" />
                             {i.description}
                         </p>
-                        <div className="mt-6 text-right">
+                        {/* <div className="mt-6 text-right">
                             <input
                                 type="checkbox"
                                 className="toggle toggle-success toggle-lg"
                                 checked={i.isActive}
                                 onChange={() => updateIntegrationStatus(k)}
                             />
-                        </div>
+                        </div> */}
                     </TitleCard>
                 );
             })}
@@ -100,4 +100,4 @@ function Integration() {
     );
 }
 
-export default Integration;
+export default Menu;

@@ -14,17 +14,17 @@ function LeftSidebar() {
     };
 
     return (
-        <div className="drawer-side  z-30  ">
+        <div className="drawer-side z-30">
             <label htmlFor="left-sidebar-drawer" className="drawer-overlay"></label>
-            <ul className="menu  min-h-full w-80 bg-base-100 pt-2   text-base-content">
+            <ul className="menu min-h-full w-60 bg-base-100 pt-2 text-base-content">
                 <button
-                    className="btn btn-circle btn-ghost  absolute right-0 top-0 z-50 mr-2 mt-4 bg-base-300 lg:hidden"
+                    className="btn btn-circle btn-ghost absolute right-0 top-0 z-50 mr-2 mt-4 bg-base-300 lg:hidden"
                     onClick={() => close()}
                 >
                     <XMarkIcon className="inline-block h-5 w-5" />
                 </button>
 
-                <li className="mb-2 text-xl font-semibold">
+                <li className="text-xl font-semibold">
                     <Link to={'/app/dashboard'}>
                         <img
                             className="mask mask-squircle w-10"
@@ -36,7 +36,7 @@ function LeftSidebar() {
                 </li>
                 {routes.map((route, k) => {
                     return (
-                        <li className="" key={k}>
+                        <li className="my-2" key={k}>
                             {route.submenu ? (
                                 <SidebarSubmenu {...route} />
                             ) : (
@@ -44,7 +44,7 @@ function LeftSidebar() {
                                     end
                                     to={route.path}
                                     className={({ isActive }) =>
-                                        `${isActive ? 'bg-base-200  font-semibold ' : 'font-normal'}`
+                                        `${isActive ? 'bg-base-200 font-semibold ' : 'font-normal'} py-8`
                                     }
                                 >
                                     {route.icon} {route.name}

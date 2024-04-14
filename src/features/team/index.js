@@ -1,8 +1,11 @@
+import TrashIcon from '@heroicons/react/24/outline/TrashIcon';
 import moment from 'moment';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import TitleCard from '../../../components/Cards/TitleCard';
-import { showNotification } from '../../common/headerSlice';
+import TitleCard from '../../components/Cards/TitleCard';
+import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil';
+import { showNotification } from '../common/headerSlice';
+import { openModal } from '../common/modalSlice';
 
 const TopSideButtons = () => {
     const dispatch = useDispatch();
@@ -87,6 +90,7 @@ const TEAM_MEMBERS = [
 ];
 
 function Team() {
+    const dispatch = useDispatch();
     const [members, setMembers] = useState(TEAM_MEMBERS);
 
     const getRoleComponent = role => {
@@ -95,6 +99,20 @@ function Team() {
         if (role === 'Owner') return <div className="badge badge-primary">{role}</div>;
         if (role === 'Support') return <div className="badge badge-accent">{role}</div>;
         else return <div className="badge badge-ghost">{role}</div>;
+    };
+
+    const deleteCurrentMember = index => {
+        dispatch(
+            openModal({
+                title: 'Confirmation',
+                bodyType: MODAL_BODY_TYPES.CONFIRMATION,
+                extraObject: {
+                    message: `Are you sure you want to delete this member?`,
+                    type: CONFIRMATION_MODAL_CLOSE_TYPES.MEMBER_DELETE,
+                    index,
+                },
+            }),
+        );
     };
 
     return (
@@ -131,6 +149,14 @@ function Team() {
                                     <td>{l.joinedOn}</td>
                                     <td>{getRoleComponent(l.role)}</td>
                                     <td>{l.lastActive}</td>
+                                    <td>
+                                        <button
+                                            className="btn btn-square btn-ghost"
+                                            onClick={() => deleteCurrentMember(k)}
+                                        >
+                                            <TrashIcon className="w-5" />
+                                        </button>
+                                    </td>
                                 </tr>
                             );
                         })}

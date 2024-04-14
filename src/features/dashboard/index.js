@@ -10,7 +10,6 @@ import { useDispatch } from 'react-redux';
 import { showNotification } from '../common/headerSlice';
 import BarChart from './components/BarChart';
 import DashboardTopBar from './components/DashboardTopBar';
-import DoughnutChart from './components/DoughnutChart';
 import LineChart from './components/LineChart';
 import UserChannels from './components/UserChannels';
 
@@ -83,7 +82,7 @@ function Dashboard() {
 
             <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <UserChannels />
-                <DoughnutChart />
+                {/* <DoughnutChart /> */}
             </div>
         </>
     );

@@ -42,16 +42,13 @@ function Header() {
         <div className="navbar sticky top-0 z-10  bg-base-100 shadow-md ">
             {/* Menu toogle for mobile view or small screen */}
             <div className="flex-1">
-                <label
-                    htmlFor="left-sidebar-drawer"
-                    className="btn btn-primary drawer-button lg:hidden"
-                >
+                <label htmlFor="left-sidebar-drawer" className="btn drawer-button lg:hidden">
                     <Bars3Icon className="inline-block h-5 w-5" />
                 </label>
                 <h1 className="ml-2 text-2xl font-semibold">{pageTitle}</h1>
             </div>
 
-            <div className="flex-none ">
+            <div className="flex-none">
                 {/* Multiple theme selection, uncomment this if you want to enable multiple themes selection,
                 also includes corporate and retro themes in tailwind.config file */}
 
