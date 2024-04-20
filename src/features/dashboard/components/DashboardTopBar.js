@@ -1,9 +1,8 @@
-import SelectBox from '../../../components/Input/SelectBox';
 import ArrowDownTrayIcon from '@heroicons/react/24/outline/ArrowDownTrayIcon';
-import ShareIcon from '@heroicons/react/24/outline/ShareIcon';
-import EnvelopeIcon from '@heroicons/react/24/outline/EnvelopeIcon';
-import EllipsisVerticalIcon from '@heroicons/react/24/outline/EllipsisVerticalIcon';
 import ArrowPathIcon from '@heroicons/react/24/outline/ArrowPathIcon';
+import EllipsisVerticalIcon from '@heroicons/react/24/outline/EllipsisVerticalIcon';
+import EnvelopeIcon from '@heroicons/react/24/outline/EnvelopeIcon';
+import ShareIcon from '@heroicons/react/24/outline/ShareIcon';
 import { useState } from 'react';
 import Datepicker from 'react-tailwindcss-datepicker';
 
@@ -30,7 +29,7 @@ function DashboardTopBar({ updateDashboardPeriod }) {
 
     return (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="">
+            <div>
                 <Datepicker
                     containerClassName="w-72 "
                     value={dateValue}
@@ -42,7 +41,7 @@ function DashboardTopBar({ updateDashboardPeriod }) {
                     showShortcuts={true}
                     primaryColor={'white'}
                 />
-                {/* <SelectBox 
+                {/* <SelectBox
                 options={periodOptions}
                 labelTitle="Period"
                 placeholder="Select date range"

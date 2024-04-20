@@ -43,7 +43,7 @@ function Register() {
         <div className="flex min-h-screen items-center bg-base-200">
             <div className="card mx-auto w-full max-w-5xl  shadow-xl">
                 <div className="grid  grid-cols-1 rounded-xl  bg-base-100 md:grid-cols-2">
-                    <div className="">
+                    <div>
                         <LandingIntro />
                     </div>
                     <div className="px-10 py-24">
