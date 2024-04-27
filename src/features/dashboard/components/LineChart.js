@@ -33,14 +33,14 @@ function LineChart() {
         },
     };
 
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const labels = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7'];
 
     const data = {
         labels,
         datasets: [
             {
                 fill: true,
-                label: 'MAU',
+                label: 'Doanh thu (VNĐ)',
                 data: labels.map(() => {
                     return Math.random() * 100 + 500;
                 }),
@@ -51,7 +51,7 @@ function LineChart() {
     };
 
     return (
-        <TitleCard title={'Montly Active Users (in K)'}>
+        <TitleCard title={'Doanh thu theo thời gian'}>
             <Line data={data} options={options} />
         </TitleCard>
     );

@@ -7,7 +7,7 @@ function InternalPage() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setPageTitle({ title: 'Menu' }));
+        dispatch(setPageTitle({ title: 'Thực đơn' }));
     }, []);
 
     return <Menu />;

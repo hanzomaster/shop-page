@@ -36,7 +36,7 @@ function LeftSidebar() {
                 </li>
                 {routes.map((route, k) => {
                     return (
-                        <li className="my-2" key={k}>
+                        <li className="my-0" key={k}>
                             {route.submenu ? (
                                 <SidebarSubmenu {...route} />
                             ) : (

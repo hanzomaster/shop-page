@@ -54,11 +54,11 @@ function DashboardTopBar({ updateDashboardPeriod }) {
             <div className="text-right ">
                 <button className="btn btn-ghost btn-sm normal-case">
                     <ArrowPathIcon className="mr-2 w-4" />
-                    Refresh Data
+                    Tải lại
                 </button>
                 <button className="btn btn-ghost btn-sm ml-2  normal-case">
                     <ShareIcon className="mr-2 w-4" />
-                    Share
+                    Chia sẻ
                 </button>
 
                 <div className="dropdown dropdown-end dropdown-bottom  ml-2">

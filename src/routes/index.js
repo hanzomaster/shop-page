@@ -2,16 +2,17 @@
 
 import { lazy } from 'react';
 
-const Dashboard = lazy(() => import('../pages/protected/Dashboard'));
+const Dashboard = lazy(() => import('../pages/protected/Info'));
 const Page404 = lazy(() => import('../pages/protected/404'));
 const Blank = lazy(() => import('../pages/protected/Blank'));
 const Charts = lazy(() => import('../pages/protected/Charts'));
-const Leads = lazy(() => import('../pages/protected/Leads'));
+const Tables = lazy(() => import('../pages/protected/Leads'));
 const Integration = lazy(() => import('../pages/protected/Integration'));
 const Calendar = lazy(() => import('../pages/protected/Calendar'));
 const Team = lazy(() => import('../pages/protected/Team'));
-const Transactions = lazy(() => import('../pages/protected/Transactions'));
-const Bills = lazy(() => import('../pages/protected/Bills'));
+const Orders = lazy(() => import('../pages/protected/Orders'));
+const Revenue = lazy(() => import('../pages/protected/Dashboard'));
+const License = lazy(() => import('../pages/protected/License'));
 const ProfileSettings = lazy(() => import('../pages/protected/ProfileSettings'));
 const Menu = lazy(() => import('../pages/protected/Menu'));
 
@@ -21,28 +22,32 @@ const routes = [
         component: Dashboard, // view rendered
     },
     {
-        path: '/leads',
-        component: Leads,
+        path: '/tables',
+        component: Tables,
     },
     {
-        path: '/settings-team',
+        path: '/employees',
         component: Team,
+    },
+    {
+        path: '/orders',
+        component: Orders,
     },
     {
         path: '/calendar',
         component: Calendar,
     },
     {
-        path: '/transactions',
-        component: Transactions,
+        path: '/revenue',
+        component: Revenue,
     },
     {
         path: '/settings-profile',
         component: ProfileSettings,
     },
     {
-        path: '/settings-billing',
-        component: Bills,
+        path: '/license',
+        component: License,
     },
     {
         path: '/integration',

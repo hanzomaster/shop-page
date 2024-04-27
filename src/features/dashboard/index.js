@@ -12,30 +12,31 @@ import BarChart from './components/BarChart';
 import DashboardTopBar from './components/DashboardTopBar';
 import LineChart from './components/LineChart';
 import UserChannels from './components/UserChannels';
+import { UserIcon } from '@heroicons/react/24/outline';
 
 const statsData = [
     {
-        title: 'New Users',
-        value: '34.7k',
-        icon: <UserGroupIcon className="h-8 w-8" />,
+        title: 'Số đơn',
+        value: '3.7k',
+        icon: <CircleStackIcon className="h-8 w-8" />,
         description: '↗︎ 2300 (22%)',
     },
     {
-        title: 'Total Sales',
-        value: '$34,545',
+        title: 'Tổng doanh thu',
+        value: '34.545.000',
         icon: <CreditCardIcon className="h-8 w-8" />,
-        description: 'Current month',
+        description: 'Tháng này',
     },
     {
-        title: 'Pending Leads',
+        title: 'Khách hàng mới',
         value: '450',
-        icon: <CircleStackIcon className="h-8 w-8" />,
-        description: '50 in hot leads',
+        icon: <UserIcon className="h-8 w-8" />,
+        description: '↗︎ 23 (28%)',
     },
     {
-        title: 'Active Users',
-        value: '5.6k',
-        icon: <UsersIcon className="h-8 w-8" />,
+        title: 'Số khách quay lại',
+        value: '500',
+        icon: <UserGroupIcon className="h-8 w-8" />,
         description: '↙ 300 (18%)',
     },
 ];
@@ -68,21 +69,7 @@ function Dashboard() {
             {/** ---------------------- Different charts ------------------------- */}
             <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <LineChart />
-                <BarChart />
-            </div>
-
-            {/** ---------------------- Different stats content 2 ------------------------- */}
-
-            <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-                <AmountStats />
-                <PageStats />
-            </div>
-
-            {/** ---------------------- User source channels table  ------------------------- */}
-
-            <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <UserChannels />
-                {/* <DoughnutChart /> */}
             </div>
         </>
     );
