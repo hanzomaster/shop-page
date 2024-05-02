@@ -10,6 +10,7 @@ const Tables = lazy(() => import('../pages/protected/Leads'));
 const Integration = lazy(() => import('../pages/protected/Integration'));
 const Calendar = lazy(() => import('../pages/protected/Calendar'));
 const Team = lazy(() => import('../pages/protected/Team'));
+const EmployeeDetail = lazy(() => import('../pages/protected/EmployeeDetail'));
 const Orders = lazy(() => import('../pages/protected/Orders'));
 const Revenue = lazy(() => import('../pages/protected/Dashboard'));
 const License = lazy(() => import('../pages/protected/License'));
@@ -28,6 +29,10 @@ const routes = [
     {
         path: '/employees',
         component: Team,
+    },
+    {
+        path: '/employees/:id',
+        component: EmployeeDetail,
     },
     {
         path: '/orders',

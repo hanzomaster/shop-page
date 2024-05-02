@@ -98,7 +98,7 @@ function Transactions() {
     return (
         <>
             <TitleCard
-                title="Recent Transactions"
+                title="Hóa đơn gần đây"
                 topMargin="mt-2"
                 TopSideButtons={
                     <TopSideButtons
@@ -113,11 +113,11 @@ function Transactions() {
                     <table className="table w-full">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email Id</th>
-                                <th>Location</th>
-                                <th>Amount</th>
-                                <th>Transaction Date</th>
+                                <th>Khách hàng</th>
+                                <th>Số điện thoại</th>
+                                <th>Bàn</th>
+                                <th>Tổng tiền</th>
+                                <th>Thời gian</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -136,10 +136,10 @@ function Transactions() {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>{l.email}</td>
+                                        <td>{l.phone}</td>
                                         <td>{l.location}</td>
                                         <td>${l.amount}</td>
-                                        <td>{moment(l.date).format('D MMM')}</td>
+                                        <td>{moment(l.date).format('HH:MM D MMM')}</td>
                                     </tr>
                                 );
                             })}

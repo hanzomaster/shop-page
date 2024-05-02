@@ -2,6 +2,7 @@ import TrashIcon from '@heroicons/react/24/outline/TrashIcon';
 import moment from 'moment';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import TitleCard from '../../components/Cards/TitleCard';
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil';
 import { showNotification } from '../common/headerSlice';
@@ -20,7 +21,7 @@ const TopSideButtons = () => {
                 className="btn btn-primary btn-sm px-6 normal-case"
                 onClick={() => addNewTeamMember()}
             >
-                Add
+                Thêm nhân viên
             </button>
         </div>
     );
@@ -31,67 +32,74 @@ const TEAM_MEMBERS = [
         name: 'Alex',
         avatar: 'https://reqres.in/img/faces/1-image.jpg',
         email: 'alex@hchip.com',
-        role: 'Owner',
+        role: 'Giám đốc',
+        phone: '0910123451',
         joinedOn: moment(new Date())
             .add(-5 * 1, 'days')
             .format('DD MMM YYYY'),
-        lastActive: '5 hr ago',
+        lastActive: '5h trước',
     },
     {
         name: 'Ereena',
         avatar: 'https://reqres.in/img/faces/2-image.jpg',
         email: 'ereena@hchip.com',
-        role: 'Admin',
+        role: 'Quản trị viên hệ thống',
+        phone: '0910123452',
         joinedOn: moment(new Date())
             .add(-5 * 2, 'days')
             .format('DD MMM YYYY'),
-        lastActive: '15 min ago',
+        lastActive: '15 phút trước',
     },
     {
         name: 'John',
         avatar: 'https://reqres.in/img/faces/3-image.jpg',
         email: 'jhon@hchip.com',
-        role: 'Admin',
+        role: 'Quản lý',
+        phone: '0910123453',
         joinedOn: moment(new Date())
             .add(-5 * 3, 'days')
             .format('DD MMM YYYY'),
-        lastActive: '20 hr ago',
+        lastActive: '20h trước',
     },
     {
         name: 'Matrix',
         avatar: 'https://reqres.in/img/faces/4-image.jpg',
         email: 'matrix@hchip.com',
-        role: 'Manager',
+        role: 'Phục vụ',
+        phone: '0910123454',
         joinedOn: moment(new Date())
             .add(-5 * 4, 'days')
             .format('DD MMM YYYY'),
-        lastActive: '1 hr ago',
+        lastActive: '1h trước',
     },
     {
         name: 'Virat',
         avatar: 'https://reqres.in/img/faces/5-image.jpg',
         email: 'virat@hchip.com',
-        role: 'Support',
+        role: 'Đầu bếp',
+        phone: '0910123455',
         joinedOn: moment(new Date())
             .add(-5 * 5, 'days')
             .format('DD MMM YYYY'),
-        lastActive: '40 min ago',
+        lastActive: '40 phút trước',
     },
     {
         name: 'Miya',
         avatar: 'https://reqres.in/img/faces/6-image.jpg',
         email: 'miya@hchip.com',
-        role: 'Support',
+        role: 'Phục vụ',
+        phone: '0910123456',
         joinedOn: moment(new Date())
             .add(-5 * 7, 'days')
             .format('DD MMM YYYY'),
-        lastActive: '5 hr ago',
+        lastActive: '5h trước',
     },
 ];
 
 function Team() {
     const dispatch = useDispatch();
     const [members, setMembers] = useState(TEAM_MEMBERS);
+    const navigate = useNavigate();
 
     const getRoleComponent = role => {
         if (role === 'Admin') return <div className="badge badge-secondary">{role}</div>;
@@ -116,23 +124,29 @@ function Team() {
     };
 
     return (
-        <TitleCard title="Employees" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
+        <TitleCard title="Danh sách nhân sự" topMargin="mt-2" TopSideButtons={<TopSideButtons />}>
             {/* Team Member list in table format loaded constant */}
             <div className="w-full overflow-x-auto">
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email Id</th>
-                            <th>Joined On</th>
-                            <th>Role</th>
-                            <th>Last Active</th>
+                            <th>Tên nhân sự</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Chức vụ</th>
+                            <th>Lần đăng nhập cuối</th>
                         </tr>
                     </thead>
                     <tbody>
                         {members.map((l, k) => {
                             return (
-                                <tr key={k}>
+                                <tr
+                                    key={k}
+                                    onClick={() => {
+                                        navigate(`/employees/${k}`, { replace: true });
+                                    }}
+                                    className="cursor-pointer hover:bg-slate-100"
+                                >
                                     <td>
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
@@ -146,7 +160,7 @@ function Team() {
                                         </div>
                                     </td>
                                     <td>{l.email}</td>
-                                    <td>{l.joinedOn}</td>
+                                    <td>{l.phone}</td>
                                     <td>{getRoleComponent(l.role)}</td>
                                     <td>{l.lastActive}</td>
                                     <td>
