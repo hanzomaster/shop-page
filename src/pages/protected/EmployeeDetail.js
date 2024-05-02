@@ -7,7 +7,7 @@ function InternalPage() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setPageTitle({ title: 'Ereena' }));
+        dispatch(setPageTitle({ title: 'Thông tin nhân viên' }));
     }, []);
 
     return <EmployeeDetail />;

@@ -143,7 +143,7 @@ function Team() {
                                 <tr
                                     key={k}
                                     onClick={() => {
-                                        navigate(`/employees/${k}`, { replace: true });
+                                        navigate(`/app/employees/${k}`, { replace: true });
                                     }}
                                     className="cursor-pointer hover:bg-slate-100"
                                 >

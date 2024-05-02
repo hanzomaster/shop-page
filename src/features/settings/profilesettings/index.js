@@ -17,45 +17,45 @@ function ProfileSettings() {
     };
 
     return (
-        <TitleCard title="Profile Settings" topMargin="mt-2">
+        <TitleCard title="Chỉnh sửa thông tin" topMargin="mt-2">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <InputText
-                    labelTitle="Name"
-                    defaultValue="Alex"
+                    labelTitle="Họ và tên"
+                    defaultValue="Alex Xander"
                     updateFormValue={updateFormValue}
                 />
                 <InputText
-                    labelTitle="Email Id"
+                    labelTitle="Email"
                     defaultValue="alex@hchip.com"
                     updateFormValue={updateFormValue}
                 />
                 <InputText
-                    labelTitle="Title"
-                    defaultValue="UI/UX Designer"
+                    labelTitle="Số điện thoại"
+                    defaultValue="0912345678"
                     updateFormValue={updateFormValue}
                 />
                 <InputText
-                    labelTitle="Place"
-                    defaultValue="California"
-                    updateFormValue={updateFormValue}
-                />
-                <TextAreaInput
-                    labelTitle="About"
-                    defaultValue="Doing what I love, part time traveller"
+                    labelTitle="Chức vụ"
+                    defaultValue="Giám đốc"
                     updateFormValue={updateFormValue}
                 />
             </div>
+            <TextAreaInput
+                labelTitle="Mô tả"
+                defaultValue="Đam mê cháy bỏng với ngành dịch vụ, kinh nghiệm 10 năm quản lý nhà hàng."
+                updateFormValue={updateFormValue}
+            />
             <div className="divider"></div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <InputText
-                    labelTitle="Language"
-                    defaultValue="English"
+                    labelTitle="Ngôn ngữ"
+                    defaultValue="Tiếng Anh, Tiếng Việt"
                     updateFormValue={updateFormValue}
                 />
                 <InputText
-                    labelTitle="Timezone"
-                    defaultValue="IST"
+                    labelTitle="Chứng chỉ"
+                    defaultValue="IELTS 7.0"
                     updateFormValue={updateFormValue}
                 />
                 {/* <ToogleInput
@@ -66,7 +66,7 @@ function ProfileSettings() {
                 /> */}
             </div>
 
-            <div className="mt-16">
+            <div className="mt-10">
                 <button className="btn btn-primary float-right" onClick={() => updateProfile()}>
                     Update
                 </button>

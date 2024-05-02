@@ -7,7 +7,7 @@ function InternalPage() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setPageTitle({ title: 'Settings' }));
+        dispatch(setPageTitle({ title: 'Thông tin tài khoản' }));
     }, []);
 
     return <ProfileSettings />;
