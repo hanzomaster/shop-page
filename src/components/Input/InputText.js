@@ -9,6 +9,7 @@ function InputText({
     placeholder,
     updateFormValue,
     updateType,
+    required,
 }) {
     const [value, setValue] = useState(defaultValue);
 
@@ -27,7 +28,8 @@ function InputText({
                 value={value}
                 placeholder={placeholder || ''}
                 onChange={e => updateInputValue(e.target.value)}
-                className="input  input-bordered w-full "
+                className="input input-bordered w-full"
+                required={required}
             />
         </div>
     );
