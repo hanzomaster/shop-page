@@ -2,7 +2,7 @@ import Subtitle from '../Typography/Subtitle';
 
 function TitleCard({ title, children, topMargin, TopSideButtons }) {
     return (
-        <div className={'card w-full bg-base-100 p-6 shadow-xl ' + (topMargin || 'mt-6')}>
+        <div className={'card w-full bg-base-100 p-6 shadow-lg' + (topMargin || 'mt-6')}>
             {/* Title for Card */}
             <Subtitle styleClass={TopSideButtons ? 'inline-block' : ''}>
                 {title}
