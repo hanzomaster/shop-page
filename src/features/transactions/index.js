@@ -47,7 +47,7 @@ const TopSideButtons = ({ removeFilter, applyFilter, applySearch }) => {
             <div className="dropdown dropdown-end dropdown-bottom">
                 <label tabIndex={0} className="btn btn-outline btn-sm">
                     <FunnelIcon className="mr-2 w-5" />
-                    Filter
+                    Bộ lọc
                 </label>
                 <ul
                     tabIndex={0}
@@ -62,7 +62,7 @@ const TopSideButtons = ({ removeFilter, applyFilter, applySearch }) => {
                     })}
                     <div className="divider mb-0 mt-0"></div>
                     <li>
-                        <a onClick={() => removeAppliedFilter()}>Remove Filter</a>
+                        <a onClick={() => removeAppliedFilter()}>Xóa bộ lọc</a>
                     </li>
                 </ul>
             </div>

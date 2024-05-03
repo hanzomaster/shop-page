@@ -11,7 +11,7 @@ function SearchBar({ searchText, styleClass, placeholderText, setSearchText }) {
                 <input
                     type="search"
                     value={searchText}
-                    placeholder={placeholderText || 'Search'}
+                    placeholder={placeholderText || 'Tìm kiếm'}
                     onChange={e => updateSearchInput(e.target.value)}
                     className="input input-sm input-bordered  w-full max-w-xs"
                 />
