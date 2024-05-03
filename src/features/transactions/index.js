@@ -138,7 +138,12 @@ function Transactions() {
                                         </td>
                                         <td>{l.phone}</td>
                                         <td>{l.location}</td>
-                                        <td>${l.amount}</td>
+                                        <td>
+                                            {l.amount
+                                                .toString()
+                                                .replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+                                            đ
+                                        </td>
                                         <td>{moment(l.date).format('HH:MM D MMM')}</td>
                                     </tr>
                                 );

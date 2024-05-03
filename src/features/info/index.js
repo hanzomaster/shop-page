@@ -96,6 +96,8 @@ function Info() {
                 </div>
             </TitleCard>
 
+            <div className="h-5"></div>
+
             <TitleCard
                 title="Trạng thái hoạt động"
                 topMargin="mt-5"

@@ -95,7 +95,7 @@ module.exports = Object.freeze({
             email: 'alex@hChip.com',
             phone: '0912345678',
             location: 'Bàn 5',
-            amount: 100,
+            amount: 1000000,
             date: moment().endOf('day'),
         },
         {
@@ -104,7 +104,7 @@ module.exports = Object.freeze({
             email: 'ereena@hChip.com',
             phone: '0912345678',
             location: 'Bàn 1',
-            amount: 190,
+            amount: 1900000,
             date: moment().add(-1, 'd').endOf('day'),
         },
         {
@@ -113,7 +113,7 @@ module.exports = Object.freeze({
             email: 'jhon@hChip.com',
             phone: '0912345678',
             location: 'Bàn 2',
-            amount: 112,
+            amount: 11200000,
             date: moment().add(-1, 'd').endOf('day'),
         },
         {
@@ -122,7 +122,7 @@ module.exports = Object.freeze({
             email: 'matrix@hChip.com',
             phone: '0912345678',
             location: 'Bàn 3',
-            amount: 111,
+            amount: 11010000,
             date: moment().add(-1, 'd').endOf('day'),
         },
         {
@@ -131,7 +131,7 @@ module.exports = Object.freeze({
             email: 'virat@hChip.com',
             phone: '0912345678',
             location: 'Bàn 1',
-            amount: 190,
+            amount: 1900000,
             date: moment().add(-2, 'd').endOf('day'),
         },
         {
@@ -140,7 +140,7 @@ module.exports = Object.freeze({
             email: 'miya@hChip.com',
             phone: '0912345678',
             location: 'Bàn 5',
-            amount: 230,
+            amount: 2300000,
             date: moment().add(-2, 'd').endOf('day'),
         },
         {
@@ -149,7 +149,7 @@ module.exports = Object.freeze({
             email: 'virat@hChip.com',
             phone: '0912345678',
             location: 'Bàn 2',
-            amount: 331,
+            amount: 3310000,
             date: moment().add(-2, 'd').endOf('day'),
         },
         {
@@ -158,7 +158,7 @@ module.exports = Object.freeze({
             email: 'matrix@hChip.com',
             phone: '0912345678',
             location: 'Bàn 1',
-            amount: 581,
+            amount: 5810000,
             date: moment().add(-2, 'd').endOf('day'),
         },
         {
@@ -167,7 +167,7 @@ module.exports = Object.freeze({
             email: 'ereena@hChip.com',
             phone: '0912345678',
             location: 'Bàn 6',
-            amount: 151,
+            amount: 1510000,
             date: moment().add(-2, 'd').endOf('day'),
         },
         {
@@ -176,7 +176,7 @@ module.exports = Object.freeze({
             email: 'jhon@hChip.com',
             phone: '0912345678',
             location: 'Bàn 5',
-            amount: 91,
+            amount: 9100000,
             date: moment().add(-2, 'd').endOf('day'),
         },
         {
@@ -185,7 +185,7 @@ module.exports = Object.freeze({
             email: 'virat@hChip.com',
             phone: '0912345678',
             location: 'Bàn 2',
-            amount: 161,
+            amount: 1610000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -194,7 +194,7 @@ module.exports = Object.freeze({
             email: 'matrix@hChip.com',
             phone: '0912345678',
             location: 'Bàn 4',
-            amount: 121,
+            amount: 1210000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -203,7 +203,7 @@ module.exports = Object.freeze({
             email: 'jhon@hChip.com',
             phone: '0912345678',
             location: 'Bàn 6',
-            amount: 713,
+            amount: 7130000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -212,7 +212,7 @@ module.exports = Object.freeze({
             email: 'ereena@hChip.com',
             phone: '0912345678',
             location: 'Bàn 1',
-            amount: 217,
+            amount: 2170000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -221,7 +221,7 @@ module.exports = Object.freeze({
             email: 'virat@hChip.com',
             phone: '0912345678',
             location: 'Bàn 5',
-            amount: 117,
+            amount: 1170000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -230,7 +230,7 @@ module.exports = Object.freeze({
             email: 'jhon@hChip.com',
             phone: '0912345678',
             location: 'Bàn 2',
-            amount: 612,
+            amount: 6120000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -239,7 +239,7 @@ module.exports = Object.freeze({
             email: 'matrix@hChip.com',
             phone: '0912345678',
             location: 'Bàn 1',
-            amount: 631,
+            amount: 6310000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -248,7 +248,7 @@ module.exports = Object.freeze({
             email: 'ereena@hChip.com',
             phone: '0912345678',
             location: 'Bàn 6',
-            amount: 151,
+            amount: 1510000,
             date: moment().add(-3, 'd').endOf('day'),
         },
         {
@@ -257,7 +257,7 @@ module.exports = Object.freeze({
             email: 'virat@hChip.com',
             phone: '0912345678',
             location: 'Bàn 5',
-            amount: 617,
+            amount: 6170000,
             date: moment().add(-3, 'd').endOf('day'),
         },
     ],
