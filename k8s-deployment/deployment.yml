@@ -1,15 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: $CI_PROJECT_NAME
+  name:  $CI_PROJECT_NAME
   namespace: $CI_PROJECT_ROOT_NAMESPACE
   labels:
-    name: $CI_PROJECT_NAME
+    name:  $CI_PROJECT_NAME
     app: $CI_PROJECT_NAME
   annotations:
-    kubectl.kubernetes.io/restartedAt: '$CURRENT_TIMESTAMP'
+    kubectl.kubernetes.io/restartedAt: "$CURRENT_TIMESTAMP"
 spec:
-  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -21,21 +20,30 @@ spec:
   template:
     metadata:
       labels:
-        name: $CI_PROJECT_NAME
+        name:  $CI_PROJECT_NAME
         app: $CI_PROJECT_NAME
       annotations:
-        kubectl.kubernetes.io/restartedAt: '$CURRENT_TIMESTAMP'
+        kubectl.kubernetes.io/restartedAt: "$CURRENT_TIMESTAMP"
     spec:
       containers:
-        - image: $IMAGE_REGISTRY_URL/$IMAGE_NAME_BUILD_LATEST
-          name: $CI_PROJECT_NAME
-          imagePullPolicy: Always
-          envFrom:
-            - secretRef:
-                name: $CI_PROJECT_NAME-secret
+      - image:  $IMAGE_REGISTRY_URL/$IMAGE_NAME_BUILD_LATEST
+        name:  $CI_PROJECT_NAME
+        imagePullPolicy: Always
+        envFrom:
+          - secretRef:
+              name: $CI_PROJECT_NAME-secret
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4000Mi
+          requests:
+            cpu: 1000m
+            memory: 2000Mi
       imagePullSecrets:
-        - name: $CI_PROJECT_NAME-registry
+      - name: $CI_PROJECT_NAME-registry
       restartPolicy: Always
+
+
 
 ---
 apiVersion: v1
@@ -53,16 +61,18 @@ spec:
     app: $CI_PROJECT_NAME
   type: ClusterIP
 ---
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: $CI_PROJECT_NAME
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: '0'
-    ingress.kubernetes.io/proxy-body-size: '0'
+    ingress.kubernetes.io/proxy-body-size: '0'   
     external-dns.alpha.kubernetes.io/target: 42.96.13.169
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: 'true'
-  labels: {}
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: 'true'   
+  labels:
+    {}
   namespace: $CI_PROJECT_ROOT_NAMESPACE
 
 spec:
@@ -78,3 +88,31 @@ spec:
                   number: 3000
             path: /
             pathType: Prefix
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: $CI_PROJECT_NAME
+  namespace: $CI_PROJECT_ROOT_NAMESPACE
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: $CI_PROJECT_NAME
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+    - resource:
+        name: memory
+        target:
+          averageUtilization: 80
+          type: Utilization
+      type: Resource
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 80
+          type: Utilization
+      type: Resource
+
