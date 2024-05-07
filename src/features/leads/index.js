@@ -158,7 +158,10 @@ function Leads() {
                                             >
                                                 <TrashIcon className="w-5" />
                                             </button>
-                                            <input type="checkbox"></input>
+                                            <input
+                                                className="absolute right-4"
+                                                type="checkbox"
+                                            ></input>
                                         </div>
                                     </td>
                                 </tr>
