@@ -24,7 +24,7 @@ function ToogleInput({
                 <input
                     type="checkbox"
                     className="toggle"
-                    checked={value}
+                    checked={defaultValue}
                     onChange={e => updateToogleValue()}
                 />
             </label>
