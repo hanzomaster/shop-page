@@ -68,7 +68,8 @@ const TopSideButtons = () => {
     };
 
     return (
-        <div className="float-right inline-block">
+        <div className="float-right flex flex-row space-x-4 ">
+            <button className="btn btn-primary btn-sm rounded-lg">In mã QR</button>
             <button
                 className="btn btn-primary btn-sm px-6 normal-case"
                 onClick={() => openAddNewLeadModal()}
@@ -121,7 +122,7 @@ function Leads() {
                             <th>Tên bàn</th>
                             <th>Số chỗ</th>
                             <th>Trạng thái</th>
-                            <th>Hoạt động</th>
+                            {/* <th>Hoạt động</th> */}
                             <th>Thao tác</th>
                         </tr>
                     </thead>
@@ -133,7 +134,7 @@ function Leads() {
                                     <td>{l.name}</td>
                                     <td>6</td>
                                     <td>{l.orderStatus}</td>
-                                    <td>
+                                    {/* <td>
                                         <div className="flex items-center justify-between">
                                             <div>
                                                 {l.isActive ? 'Đang hoạt động' : 'Dừng phục vụ'}
@@ -143,12 +144,9 @@ function Leads() {
                                                 containerStyle="w-fit"
                                             ></ToogleInput>
                                         </div>
-                                    </td>
+                                    </td> */}
                                     <td>
                                         <div className="flex items-center justify-start gap-7">
-                                            <button className="btn btn-primary btn-sm rounded-lg">
-                                                In mã QR
-                                            </button>
                                             <button className="btn btn-sm rounded-lg bg-slate-300 text-gray-700">
                                                 Sửa
                                             </button>

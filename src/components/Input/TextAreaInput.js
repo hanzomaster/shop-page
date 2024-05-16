@@ -4,6 +4,7 @@ function TextAreaInput({
     labelTitle,
     labelStyle,
     type,
+    isDisabled,
     containerStyle,
     defaultValue,
     placeholder,
@@ -16,20 +17,40 @@ function TextAreaInput({
         setValue(val);
         updateFormValue({ updateType, value: val });
     };
-
-    return (
-        <div className={`form-control w-full ${containerStyle}`}>
-            <label className="label">
-                <span className={'label-text text-base-content ' + labelStyle}>{labelTitle}</span>
-            </label>
-            <textarea
-                value={value}
-                className="textarea textarea-bordered w-full"
-                placeholder={placeholder || ''}
-                onChange={e => updateInputValue(e.target.value)}
-            ></textarea>
-        </div>
-    );
+    if (isDisabled) {
+        return (
+            <div className={`form-control w-full ${containerStyle}`}>
+                <label className="label">
+                    <span className={'label-text text-base-content ' + labelStyle}>
+                        {labelTitle}
+                    </span>
+                </label>
+                <textarea
+                    disabled
+                    value={value}
+                    className="textarea textarea-bordered w-full"
+                    placeholder={placeholder || ''}
+                    onChange={e => updateInputValue(e.target.value)}
+                ></textarea>
+            </div>
+        );
+    } else {
+        return (
+            <div className={`form-control w-full ${containerStyle}`}>
+                <label className="label">
+                    <span className={'label-text text-base-content ' + labelStyle}>
+                        {labelTitle}
+                    </span>
+                </label>
+                <textarea
+                    value={value}
+                    className="textarea textarea-bordered w-full"
+                    placeholder={placeholder || ''}
+                    onChange={e => updateInputValue(e.target.value)}
+                ></textarea>
+            </div>
+        );
+    }
 }
 
 export default TextAreaInput;

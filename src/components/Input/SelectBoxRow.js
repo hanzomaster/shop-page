@@ -47,7 +47,7 @@ function SelectBox(props) {
                 {options.map((o, k) => {
                     return (
                         <div
-                            class="relative flex shrink-0 cursor-pointer flex-row items-center justify-center rounded bg-slate-100 px-2.5 py-2 text-sm text-neutral-700 hover:bg-slate-200 dark:bg-slate-900"
+                            class="relative flex shrink-0 cursor-pointer flex-row items-center justify-center rounded bg-slate-100 px-2.5 py-2 text-sm text-neutral-700 hover:bg-slate-200"
                             value={o}
                             key={k}
                         >

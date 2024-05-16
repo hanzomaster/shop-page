@@ -113,7 +113,7 @@ function Transactions() {
                     <table className="table w-full">
                         <thead>
                             <tr>
-                                <th>Khách hàng</th>
+                                {/* <th>Khách hàng</th> */}
                                 <th>Số điện thoại</th>
                                 <th>Bàn</th>
                                 <th>Tổng tiền</th>
@@ -124,7 +124,7 @@ function Transactions() {
                             {trans.map((l, k) => {
                                 return (
                                     <tr key={k}>
-                                        <td>
+                                        {/* <td>
                                             <div className="flex items-center space-x-3">
                                                 <div className="avatar">
                                                     <div className="mask mask-circle h-12 w-12">
@@ -135,7 +135,7 @@ function Transactions() {
                                                     <div className="font-bold">{l.name}</div>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </td> */}
                                         <td>{l.phone}</td>
                                         <td>{l.location}</td>
                                         <td>

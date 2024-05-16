@@ -100,7 +100,7 @@ function Team() {
     const dispatch = useDispatch();
     const [members, setMembers] = useState(TEAM_MEMBERS);
     const navigate = useNavigate();
-
+    
     const getRoleComponent = role => {
         if (role === 'Admin') return <div className="badge badge-secondary">{role}</div>;
         if (role === 'Manager') return <div className="badge">{role}</div>;
@@ -163,14 +163,14 @@ function Team() {
                                     <td>{l.phone}</td>
                                     <td>{getRoleComponent(l.role)}</td>
                                     <td>{l.lastActive}</td>
-                                    <td>
+                                    {/* <td>
                                         <button
                                             className="btn btn-square btn-ghost"
                                             onClick={() => deleteCurrentMember(k)}
                                         >
                                             <TrashIcon className="w-5" />
                                         </button>
-                                    </td>
+                                    </td> */}
                                 </tr>
                             );
                         })}

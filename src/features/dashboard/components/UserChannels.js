@@ -6,15 +6,18 @@ const userSourceData = [
     { source: 'Canh giá', count: '379', revenue: '10.200.000' },
     { source: 'Ghẹ hấp', count: '359', revenue: '10.200.000' },
     { source: 'Tôm luộc', count: '1345', revenue: '10.200.000' },
+    { source: 'Tôm luộc', count: '1345', revenue: '10.200.000' },
+    { source: 'Tôm luộc', count: '1345', revenue: '10.200.000' },
+    { source: 'Tôm luộc', count: '1345', revenue: '10.200.000' }
 ];
 
 function UserChannels() {
     return (
         <TitleCard title={'Món bán chạy'}>
             {/** Table Data */}
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    <thead>
+            <div className="overflow-x-auto overflow-y-scroll h-64">
+                <table className="table w-full overflow-y-scroll">
+                    <thead className=''>
                         <tr>
                             <th></th>
                             <th className="normal-case">Món</th>
@@ -22,7 +25,7 @@ function UserChannels() {
                             <th className="normal-case">Doanh thu</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className=''>
                         {userSourceData.map((u, k) => {
                             return (
                                 <tr key={k}>
