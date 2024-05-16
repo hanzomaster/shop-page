@@ -9,6 +9,7 @@ const Charts = lazy(() => import('../pages/protected/Charts'));
 const Tables = lazy(() => import('../pages/protected/Leads'));
 const Integration = lazy(() => import('../pages/protected/Integration'));
 const Calendar = lazy(() => import('../pages/protected/Calendar'));
+const Booking = lazy(() => import('../pages/protected/Booking'));
 const Team = lazy(() => import('../pages/protected/Team'));
 const EmployeeDetail = lazy(() => import('../pages/protected/EmployeeDetail'));
 const Orders = lazy(() => import('../pages/protected/Orders'));
@@ -39,8 +40,8 @@ const routes = [
         component: Orders,
     },
     {
-        path: '/calendar',
-        component: Calendar,
+        path: '/booking',
+        component: Booking,
     },
     {
         path: '/revenue',

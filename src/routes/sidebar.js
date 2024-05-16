@@ -36,7 +36,7 @@ const routes = [
         name: 'Quản lý bàn', // name that appear in Sidebar
     },
     {
-        path: '/app/calendar', // url
+        path: '/app/booking', // url
         icon: <CalendarDaysIcon className={iconClasses} />, // icon component
         name: 'Quản lý đặt bàn', // name that appear in Sidebar
     },
