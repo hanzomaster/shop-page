@@ -55,28 +55,28 @@ const routes = [
         icon: <UsersIcon className={submenuIconClasses} />, // icon component
         name: 'Quản lý nhân viên', // name that appear in Sidebar
     },
+    {
+        path: '/app/lisense',
+        icon: <WalletIcon className={submenuIconClasses} />,
+        name: 'Giấy phép',
+    },
     // {
     //     path: '/app/charts', // url
     //     icon: <ChartBarIcon className={iconClasses} />, // icon component
     //     name: 'Analytics', // name that appear in Sidebar
     // },
-    {
-        path: '', //no url needed as this has submenu
-        icon: <Cog6ToothIcon className={`${iconClasses} inline`} />, // icon component
-        name: 'Cài đặt', // name that appear in Sidebar
-        submenu: [
-            {
-                path: '/app/settings-profile', //url
-                icon: <UserIcon className={submenuIconClasses} />, // icon component
-                name: 'Cá nhân', // name that appear in Sidebar
-            },
-            {
-                path: '/app/lisense',
-                icon: <WalletIcon className={submenuIconClasses} />,
-                name: 'Giấy phép',
-            },
-        ],
-    },
+    // {
+    //     path: '', //no url needed as this has submenu
+    //     icon: <Cog6ToothIcon className={`${iconClasses} inline`} />, // icon component
+    //     name: 'Cài đặt', // name that appear in Sidebar
+    //     submenu: [
+    //         {
+    //             path: '/app/settings-profile', //url
+    //             icon: <UserIcon className={submenuIconClasses} />, // icon component
+    //             name: 'Cá nhân', // name that appear in Sidebar
+    //         },
+    //     ],
+    // },
     // {
     //     path: '', //no url needed as this has submenu
     //     icon: <DocumentDuplicateIcon className={`${iconClasses} inline`} />, // icon component
