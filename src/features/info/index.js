@@ -120,21 +120,21 @@ function Info() {
                     </div>
 
                     <div className="grid w-full max-md:grid-rows-3 md:grid-cols-3 md:gap-3">
-                        <SelectBox
-                            labelTitle="Tỉnh / thành phố"
-                            options={cityList}
+                    <InputText
+                            labelTitle="Tỉnh/Thành phố"
+                            required={true}
                             updateFormValue={updateFormValue}
-                        ></SelectBox>
-                        <SelectBox
-                            labelTitle="Quận / huyện"
-                            options={districtList}
+                        ></InputText>
+                        <InputText
+                            labelTitle="Quận/Huyện"
+                            required={true}
                             updateFormValue={updateFormValue}
-                        ></SelectBox>
-                        <SelectBox
-                            labelTitle="Phường / xã"
-                            options={guildList}
+                        ></InputText>
+                        <InputText
+                            labelTitle="Xã/Phường"
+                            required={true}
                             updateFormValue={updateFormValue}
-                        ></SelectBox>
+                        ></InputText>
                     </div>
                     <InputText
                         labelTitle="Địa chỉ chi tiết"

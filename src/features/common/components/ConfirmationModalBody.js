@@ -13,11 +13,13 @@ function ConfirmationModalBody({ extraObject, closeModal }) {
         switch (type) {
             case CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE:
                 dispatch(deleteLead({ index }));
-                dispatch(showNotification({ message: 'Lead Deleted!', status: 1 }));
+                dispatch(showNotification({ message: 'Xoá quản lý thành công!', status: 1 }));
                 break;
             case CONFIRMATION_MODAL_CLOSE_TYPES.MEMBER_DELETE:
                 dispatch(deleteMember({ index }));
-                dispatch(showNotification({ message: 'Member Deleted!', status: 1 }));
+                window.location = "/app/employees"
+                dispatch(showNotification({ message: 'Xoá nhân viên thành công!', status: 1 }));
+
                 break;
             default:
                 break;
@@ -31,11 +33,11 @@ function ConfirmationModalBody({ extraObject, closeModal }) {
 
             <div className="modal-action mt-12">
                 <button className="btn btn-outline   " onClick={() => closeModal()}>
-                    Cancel
+                    Huỷ
                 </button>
 
                 <button className="btn btn-primary w-36" onClick={() => proceedWithYes()}>
-                    Yes
+                    Đồng ý
                 </button>
             </div>
         </>

@@ -7,6 +7,7 @@ import ToogleInput from '../../components/Input/ToogleInput';
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil';
 import { openModal } from '../common/modalSlice';
 import { getLeadsContent } from './leadSlice';
+import Modal  from './modal'
 
 const INITIAL_INTEGRATION_LIST = [
     {
@@ -69,7 +70,7 @@ const TopSideButtons = () => {
 
     return (
         <div className="float-right flex flex-row space-x-4 ">
-            <button className="btn btn-primary btn-sm rounded-lg">In mã QR</button>
+            
             <button
                 className="btn btn-primary btn-sm px-6 normal-case"
                 onClick={() => openAddNewLeadModal()}
@@ -147,19 +148,20 @@ function Leads() {
                                     </td> */}
                                     <td>
                                         <div className="flex items-center justify-start gap-7">
-                                            <button className="btn btn-sm rounded-lg bg-slate-300 text-gray-700">
+                                            {/* <button className="btn btn-sm rounded-lg bg-slate-300 text-gray-700">
                                                 Sửa
-                                            </button>
+                                            </button> */}
+                                            <Modal/>
                                             <button
                                                 className="btn btn-square btn-ghost"
                                                 onClick={() => deleteCurrentLead(k)}
                                             >
                                                 <TrashIcon className="w-5" />
                                             </button>
-                                            <input
+                                            {/* <input
                                                 className="absolute right-4"
                                                 type="checkbox"
-                                            ></input>
+                                            ></input> */}
                                         </div>
                                     </td>
                                 </tr>

@@ -7,7 +7,7 @@ import TitleCard from '../../components/Cards/TitleCard';
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil';
 import { showNotification } from '../common/headerSlice';
 import { openModal } from '../common/modalSlice';
-
+import InsertModal from './insertEmpl'
 const TopSideButtons = () => {
     const dispatch = useDispatch();
 
@@ -17,12 +17,7 @@ const TopSideButtons = () => {
 
     return (
         <div className="float-right inline-block">
-            <button
-                className="btn btn-primary btn-sm px-6 normal-case"
-                onClick={() => addNewTeamMember()}
-            >
-                Thêm nhân viên
-            </button>
+            <InsertModal/>
         </div>
     );
 };
@@ -115,7 +110,7 @@ function Team() {
                 title: 'Confirmation',
                 bodyType: MODAL_BODY_TYPES.CONFIRMATION,
                 extraObject: {
-                    message: `Are you sure you want to delete this member?`,
+                    message: `Bạn có chắc chắn muốn xoá người này không`,
                     type: CONFIRMATION_MODAL_CLOSE_TYPES.MEMBER_DELETE,
                     index,
                 },

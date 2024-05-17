@@ -4,12 +4,16 @@ import InputText from '../../components/Input/InputText';
 import TextAreaInput from '../../components/Input/TextAreaInput';
 import { openModal } from '../common/modalSlice';
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil';
+import { showNotification } from '../common/headerSlice';
 import { useState } from 'react';
 function Employee() {
     const dispatch = useDispatch();
     const [isDisable, setIsDisable] = useState(true);
     const updateProfile = index => {
         setIsDisable(!isDisable);
+        if (!isDisable) {
+            dispatch(showNotification({ message: 'Thay đổi thông tin thành công', status: 1 }));
+        }
         // dispatch(openModal({ title: 'Add New Lead', bodyType: MODAL_BODY_TYPES.LEAD_ADD_NEW }));
     };
     const deleteCurrentMember = index => {
@@ -18,7 +22,7 @@ function Employee() {
                 title: 'Confirmation',
                 bodyType: MODAL_BODY_TYPES.CONFIRMATION,
                 extraObject: {
-                    message: `Are you sure you want to delete this member?`,
+                    message: `Bạn có chắc chắn muốn xoá người này không`,
                     type: CONFIRMATION_MODAL_CLOSE_TYPES.MEMBER_DELETE,
                     index,
                 },
