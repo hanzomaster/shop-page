@@ -16,7 +16,8 @@ function FoodCard({ title, children, topMargin, price, isActive }) {
             {!deleted && (
                 <div
                     className={
-                        'group card w-full bg-base-100 p-6 pb-2 shadow-lg' + (topMargin || 'mt-6')
+                        'group card w-full bg-base-100 p-6 pb-2 shadow-lg focus-within:border-2 focus-within:border-neutral-200 focus-within:shadow-xl' +
+                        (topMargin || 'mt-6')
                     }
                 >
                     {/* Title for Card */}
@@ -30,7 +31,8 @@ function FoodCard({ title, children, topMargin, price, isActive }) {
                             <input
                                 type="text"
                                 defaultValue={price}
-                                className="text-right focus:outline-none"
+                                className="text-right invalid:text-red-600 invalid:underline-offset-1 focus:outline-none"
+                                pattern="^(?!.*[.,]{2})[0-9.,]+$"
                             ></input>
                             đ
                         </div>

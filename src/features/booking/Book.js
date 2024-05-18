@@ -52,7 +52,7 @@ const TIME_LIST = [
     { value: '23:00', isDisabled: true },
 ];
 
-function Book() {
+function Book({ setButtonActive }) {
     const dispatch = useDispatch();
     const [dateOptions, setDateOption] = useState(DATE_LIST);
     const [timeOptions, setTimeOption] = useState(TIME_LIST);
@@ -62,6 +62,7 @@ function Book() {
     // Call API to update profile settings changes
     const createBookingRequest = () => {
         dispatch(showNotification({ message: 'Tạo yêu cầu thành công', status: 1 }));
+        setButtonActive();
     };
 
     const updateFormValue = ({ updateType, value }) => {
@@ -130,7 +131,7 @@ function Book() {
 
                         return (
                             <div
-                                className={`relative flex shrink-0 flex-row items-center justify-center rounded px-2.5 py-2 text-sm text-neutral-700  ${o.isDisabled ? 'cursor-default bg-gray-300 dark:bg-black' : chosenTime == o.value ? 'bg-blue-200' : 'cursor-pointer bg-neutral-100 hover:bg-slate-200 dark:bg-slate-900'}`}
+                                className={`relative flex shrink-0 flex-row items-center justify-center rounded px-2.5 py-2 text-sm text-neutral-700  ${o.isDisabled ? 'cursor-default bg-gray-300 dark:bg-black' : chosenTime == o.value ? 'bg-primary text-white' : 'cursor-pointer bg-neutral-100 hover:bg-slate-200 dark:bg-slate-900'}`}
                                 value={o.value}
                                 key={k}
                                 onClick={() => {

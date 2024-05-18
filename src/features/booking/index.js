@@ -48,7 +48,7 @@ function Booking() {
                     <Request />
                 </TETabsPane>
                 <TETabsPane show={buttonActive === 'tab2'}>
-                    <Book />
+                    <Book setButtonActive={() => handleButtonClick('tab1')} />
                 </TETabsPane>
                 <TETabsPane show={buttonActive === 'tab3'}>
                     <History />

@@ -89,6 +89,13 @@ const temp = {
 
 function NewFoodCard() {
     const [newFood, setNewFood] = useState(temp);
+    const [file, setFile] = useState(newFood.icon);
+
+    function uploadImg(e) {
+        if (e.target.files.length > 0) {
+            setFile(URL.createObjectURL(e.target.files[0]));
+        }
+    }
 
     return (
         <FoodCard
@@ -102,9 +109,14 @@ function NewFoodCard() {
             }
         >
             <p className="gap-3 sm:flex">
+                <input
+                    className="absolute cursor-pointer bg-transparent text-transparent opacity-0 sm:h-40 sm:w-40"
+                    type="file"
+                    onChange={uploadImg}
+                />
                 <img
                     alt="icon"
-                    src={newFood.icon}
+                    src={file}
                     className="mr-4 inline-block cursor-pointer rounded sm:h-40 sm:w-40"
                 />
                 <span>
