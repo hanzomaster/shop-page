@@ -4,7 +4,7 @@ import { closeModal } from '../common/modalSlice';
 import TitleCard from '../../components/Cards/TitleCard';
 import InputText from '../../components/Input/InputText';
 import TextAreaInput from '../../components/Input/TextAreaInput';
-function InsertModal() {
+function InsertModal({addNewTeamMember}) {
     const [showModal, setShowModal] = useState(false);
     return (
         <>
@@ -65,7 +65,9 @@ function InsertModal() {
                                         </button>
                                         <button
                                             className="btn btn-primary float-right"
-                                            onClick={() => setShowModal(false)}
+                                            onClick={() => {
+                                              addNewTeamMember()
+                                              setShowModal(false)}}
                                         >
                                             Thêm nhân viên
                                         </button>

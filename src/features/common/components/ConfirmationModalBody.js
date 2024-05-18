@@ -13,7 +13,7 @@ function ConfirmationModalBody({ extraObject, closeModal }) {
         switch (type) {
             case CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE:
                 dispatch(deleteLead({ index }));
-                dispatch(showNotification({ message: 'Xoá quản lý thành công!', status: 1 }));
+                dispatch(showNotification({ message: 'Huỷ bàn thành công!', status: 1 }));
                 break;
             case CONFIRMATION_MODAL_CLOSE_TYPES.MEMBER_DELETE:
                 dispatch(deleteMember({ index }));

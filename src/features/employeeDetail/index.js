@@ -19,7 +19,7 @@ function Employee() {
     const deleteCurrentMember = index => {
         dispatch(
             openModal({
-                title: 'Confirmation',
+                title: 'Xác nhận',
                 bodyType: MODAL_BODY_TYPES.CONFIRMATION,
                 extraObject: {
                     message: `Bạn có chắc chắn muốn xoá người này không`,
@@ -70,7 +70,7 @@ function Employee() {
                     {isDisable ? 'Cập nhật' : 'Lưu thay đổi'}
                 </button>
                 <button
-                    className="btn btn-primary float-right"
+                    className="btn btn-primary bg-red-500 float-right"
                     onClick={() => deleteCurrentMember()}
                 >
                     Xoá nhân viên

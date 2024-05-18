@@ -97,10 +97,10 @@ function Request() {
     const deleteCurrentLead = index => {
         dispatch(
             openModal({
-                title: 'Confirmation',
+                title: 'Xác nhận',
                 bodyType: MODAL_BODY_TYPES.CONFIRMATION,
                 extraObject: {
-                    message: `Bạn có chắc muốn hủy đơn này?`,
+                    message: `Bạn có chắc muốn hủy yêu cầu đặt bàn này?`,
                     type: CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE,
                     index,
                 },

@@ -5,11 +5,13 @@ import ToogleInput from '../../components/Input/ToogleInput';
 import SelectBoxRow from '../../components/Input/SelectBoxRow';
 import SelectBox from '../../components/Input/SelectBox';
 import { useRef } from 'react';
-
+import { useDispatch } from 'react-redux';
+import { showNotification } from '../common/headerSlice';
 const TopSideButtons = () => {
     // const dispatch = useDispatch();
-
+    const dispatch = useDispatch()
     const updateInfo = () => {
+        dispatch(showNotification({ message: 'Lưu thông tin nhà hàng thành công!', status: 1 }));
         // todo: complete
     };
 
@@ -76,28 +78,31 @@ function Info() {
                 <div className="w-full flex-shrink">
                     <div className="lg:flex lg:gap-3">
                         <InputText
+                        defaultValue= "Bông sen vàng"
                             labelTitle="Tên nhà hàng"
                             required={true}
                             updateFormValue={updateFormValue}
                         ></InputText>
                         <InputText
+                        defaultValue="0912363223"
                             labelTitle="Số điện thoại"
                             type="phoneNumber"
                             updateFormValue={updateFormValue}
                         ></InputText>
                     </div>
                     <TextAreaInput
+                    defaultValue="Nhà hàng gia truyền 80 năm"
                         labelTitle="Mô tả chi tiết"
                         updateFormValue={updateFormValue}
                     ></TextAreaInput>
 
                     <div className="items-center lg:flex lg:gap-3">
                         <div className="items-center lg:w-1/2 lg:gap-3">
-                            <ToogleInput
+                            {/* <ToogleInput
                                 labelTitle="Lịch hoạt động"
                                 containerStyle="md:w-[200px]"
                                 updateFormValue={updateFormValue}
-                            ></ToogleInput>
+                            ></ToogleInput> */}
                             <SelectBoxRow
                                 options={days}
                                 containerStyle="align-top"
@@ -121,22 +126,26 @@ function Info() {
 
                     <div className="grid w-full max-md:grid-rows-3 md:grid-cols-3 md:gap-3">
                     <InputText
+                    defaultValue="Hà Nội"
                             labelTitle="Tỉnh/Thành phố"
                             required={true}
                             updateFormValue={updateFormValue}
                         ></InputText>
                         <InputText
+                        defaultValue="Đống Đa"
                             labelTitle="Quận/Huyện"
                             required={true}
                             updateFormValue={updateFormValue}
                         ></InputText>
                         <InputText
+                        defaultValue="Trung Tự"
                             labelTitle="Xã/Phường"
                             required={true}
                             updateFormValue={updateFormValue}
                         ></InputText>
                     </div>
                     <InputText
+                    defaultValue="Số 1 Phạm Ngọc Thạch"
                         labelTitle="Địa chỉ chi tiết"
                         updateFormValue={updateFormValue}
                     ></InputText>

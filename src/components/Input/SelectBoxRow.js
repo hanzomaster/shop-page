@@ -23,6 +23,15 @@ function SelectBox(props) {
         setValue(newValue);
     };
 
+    const [chosen, setChosen] = useState(false)
+    const [List_Days, setListDay] = useState([1,1,1,1,1,0,0])
+
+    const setDayActive = (key) => {
+        let temp = [...List_Days]
+        temp[key] = temp[key] === 1 ? 0 : 1
+        setListDay(temp)
+    }
+
     return (
         <div className={`inline-block ${containerStyle}`}>
             <label className={`label  ${labelStyle}`}>
@@ -47,7 +56,8 @@ function SelectBox(props) {
                 {options.map((o, k) => {
                     return (
                         <div
-                            class="relative flex shrink-0 cursor-pointer flex-row items-center justify-center rounded bg-slate-100 px-2.5 py-2 text-sm text-neutral-700 hover:bg-slate-200"
+                            onClick={()=>{setDayActive(k)}}
+                            class={List_Days[k] === 1 ? "relative flex shrink-0 cursor-pointer flex-row items-center justify-center rounded bg-primary px-2.5 py-2 text-sm text-white": "relative flex shrink-0 cursor-pointer flex-row items-center justify-center rounded bg-slate-100 px-2.5 py-2 text-sm text-neutral-700 hover:bg-slate-200" }
                             value={o}
                             key={k}
                         >

@@ -12,12 +12,12 @@ const TopSideButtons = () => {
     const dispatch = useDispatch();
 
     const addNewTeamMember = () => {
-        dispatch(showNotification({ message: 'Add New Member clicked', status: 1 }));
+        dispatch(showNotification({ message: 'Thêm nhân viên mới thành công', status: 1 }));
     };
 
     return (
         <div className="float-right inline-block">
-            <InsertModal/>
+            <InsertModal addNewTeamMember={addNewTeamMember}/>
         </div>
     );
 };
